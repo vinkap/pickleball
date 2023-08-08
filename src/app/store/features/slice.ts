@@ -32,13 +32,12 @@ const tournamentSlice = createSlice({
                 switch (Math.random().toFixed()) {
                     case '0':
                         state.pointsTeam1++;
-                        state.gameOver = state.pointsTeam1 > 10;
                         break;
                     case '1':
                         state.pointsTeam2++;
-                        state.gameOver = state.pointsTeam2 > 10;
                         break;
                 }
+                state.gameOver = (state.pointsTeam1 > 10) || (state.pointsTeam2 > 10);
             }
         },
     },
