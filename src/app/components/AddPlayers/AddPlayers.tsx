@@ -10,6 +10,7 @@ export default function AddPlayers() {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         dispatch(addPlayer(name));
+        setName('');
     }
 
     return (
@@ -18,6 +19,7 @@ export default function AddPlayers() {
             <input
                 type="text"
                 name="name"
+                value={name}
                 onChange={(e) => setName(e.target.value)} 
             />
             <br />
